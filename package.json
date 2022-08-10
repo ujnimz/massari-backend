@@ -1,7 +1,7 @@
 {
   "name": "smb-artists",
   "version": "1.0.0",
-  "description": "Artists list for SMB",
+  "description": "Backend for Massari Store",
   "main": "server.js",
   "scripts": {
     "admin-install": "npm install --prefix admin",
