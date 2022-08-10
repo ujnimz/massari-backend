@@ -1,0 +1,59 @@
+{
+    "name": "Beard & Moustache Trimming Shears",
+    "description": "Trim your moustache and beard professionally with 100% stainless steel shears from Massari! Designed to work, the Massari Trimming Scissors feature a matte black finish with a neatly etched logo. Ergonomically shaped and designed to give you the ultimate control, it provides a straight and precise cut to prevent split ends and will help you trim your moustache and beard with confidence. Not only are they functionally awesome but have this slick looking stealth minimalistic design to it too. Featuring a leather carry pouch which makes it very travel-friendly!",
+    "price": 19,
+    "images": [
+        "/Users/perpetual/Downloads/beard-and-moustache-trimming-shears-1.jpg",
+        "/Users/perpetual/Downloads/beard-and-moustache-trimming-shears-2.jpg"
+    ],
+    "category": "All",
+    "stock": 200,
+    "language": "en",
+    "translation": [
+        {
+            "language": "ar",
+            "name": "مقص اللحية والشارب",
+            "description": "حافظ على مظهر شاربك ولحيتك باحترافية مع مقصات الفولاذ المقاومة للصدأ 100% من مساري ستور! مصمم للعمل بكل احترافية، يتميز بلونة الأسود المطفي مع شعار مساري ستور المحفور بدقة، تم تصميمه هندسيًا ليمنحك التحكم المطلق عند استخدامك له! يوفر لك قصًا دقيقًا ومستقيمًا للحد من تقصف الأطراف ويساعدك على تشذيب شاربك ولحيتك بثقة أكبر. يأتي مع حقيبة جلدية سهلة الاستخدام والتنقل!"
+        }
+    ]
+}
+
+{
+    "name": "Beard Comb",
+    "description": "Keep your beard perfectly groomed all day long with the dual sided comb from Massari. Made to be durable and convenient, the double-sided design with fine and coarse teeth add versatility which makes it the ultimate grooming tool for all beard types and lengths. Its sleek black design with the engraved logo gives it an elegant and sophisticated look. It also comes with a pouch which makes it easy to carry and travel friendly.",
+    "price": 25,
+    "images": [
+        "/Users/perpetual/Downloads/massari-beard-comb-1.jpg",
+        "/Users/perpetual/Downloads/massari-beard-comb-2.jpg"
+    ],
+    "category": "All",
+    "stock": 200,
+    "language": "en",
+    "translation": [
+        {
+            "language": "ar",
+            "name": "مشط اللحية من مساري",
+            "description": "حافظ على لحيتك مهذبة بشكل مثالي طوال اليوم مع مشط اللحية المزدوج من مساري ستور. تم تصميمه ليكون مريحًا في الاستخدام وعمليًا من خلال تصميمه المزدوج الذي يشمل أسنانًا ناعمة وخشنة ليضيف تنوعًا يجعل منه أداة الحلاقة المثالية لجميع أنواع اللحية وأطوالها. يضفي تصميمه الأسود الأنيق مع شعار مساري المنقوش مظهرًا أنيقًا وعصريًا، كما يأتي مع حقيبة تجعله سهل للحمل والسفر."
+        }
+    ]
+}
+
+
+{
+    "shippingInfo": {
+        "address": "",
+        "city": "",
+        "state": "",
+        "country": "",
+        "pinCode": 22787,
+        "phoneNo": "+97336650633"
+    },
+    "orderItems": [
+        {
+            "name": "",
+            "price": 19,
+            "quantity": 3,
+            "image": ""
+        }
+    ]
+}
