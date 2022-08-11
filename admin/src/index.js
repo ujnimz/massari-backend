@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import {BrowserRouter} from 'react-router-dom';
-import {SnackbarProvider, useSnackbar} from 'notistack';
+import {SnackbarProvider} from 'notistack';
 
 // Redux Store
 import {store} from './redux/store';

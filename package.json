@@ -1,11 +1,11 @@
 {
-  "name": "smb-artists",
+  "name": "massari-backend",
   "version": "1.0.0",
-  "description": "Backend for Massari Storenpm",
+  "description": "Backend for Massari Store",
   "main": "server.js",
   "scripts": {
     "admin-install": "npm install --prefix admin",
-    "start": "npm server.js",
+    "start": "npm server",
     "server": "nodemon server.js",
     "admin": "npm start --prefix admin",
     "dev": "concurrently \"npm run server\" \"npm run admin\""

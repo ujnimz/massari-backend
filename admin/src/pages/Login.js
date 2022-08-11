@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import {styled, alpha} from '@mui/material/styles';
+import {Navigate} from 'react-router-dom';
+//import {styled, alpha} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
@@ -17,10 +18,11 @@ const Login = () => {
   const {isAuthenticated, user, isLoading, error} = state;
 
   console.log(isLoading);
-  const {enqueueSnackbar, closeSnackbar} = useSnackbar();
+  console.log(isLoading);
+  const {enqueueSnackbar} = useSnackbar();
 
   const dispatch = useDispatch();
-
+  console.log(user);
   useEffect(() => {
     if (error) {
       enqueueSnackbar(error.message, {variant: 'error'});
@@ -42,6 +44,18 @@ const Login = () => {
 
     //console.log('submitting', login);
   };
+
+  if (isLoading) {
+    return (
+      <div>
+        <h1>Loading..</h1>
+      </div>
+    );
+  }
+
+  if (isAuthenticated) {
+    return <Navigate to={'/'} />;
+  }
 
   return (
     <Container maxWidth='sm'>
