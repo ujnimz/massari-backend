@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "admin-install": "npm install --prefix admin",
-    "start": "npm server",
+    "start": "node server.js",
     "server": "nodemon server.js",
     "admin": "npm start --prefix admin",
     "dev": "concurrently \"npm run server\" \"npm run admin\""
