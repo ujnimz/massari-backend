@@ -11,6 +11,12 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
   const {name, email, password} = req.body;
 
   try {
+    // checking if user has given password and email both
+    if (!name || !email || !password) {
+      return next(new ErrorHander('Please Enter Name, Email & Password', 400));
+    }
+
+    // checking if user is already registered
     let user = await User.findOne({email});
     if (user) return next(new ErrorHander('User already registered.', 400));
 

@@ -12,8 +12,8 @@ const userSchema = new Schema({
   name: {
     type: String,
     required: [true, 'Please Enter Your Name'],
-    maxLength: [30, 'Name cannot exceed 30 characters'],
-    minLength: [4, 'Name should have more than 4 characters'],
+    maxlength: [30, 'Name cannot exceed 30 characters'],
+    minlength: [4, 'Name should have more than 4 characters'],
   },
   email: {
     type: String,
@@ -24,7 +24,7 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: [true, 'Please Enter Your Password'],
-    minLength: [8, 'Password should be greater than 8 characters'],
+    minlength: [8, 'Password should be greater than 8 characters'],
     select: false,
   },
   avatar: {
@@ -44,6 +44,10 @@ const userSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+  },
+  active: {
+    type: Boolean,
+    default: false,
   },
 
   resetPasswordToken: String,
@@ -66,7 +70,6 @@ userSchema.methods.getJWTToken = function () {
 };
 
 // Compare Password
-
 userSchema.methods.comparePassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
