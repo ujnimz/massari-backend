@@ -21,9 +21,10 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-app.use(express.json());
+//app.use(express.json());
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json({limit: '5mb'}));
+app.use(bodyParser.urlencoded({limit: '5mb', extended: true}));
 app.use(fileUpload());
 
 // Route Imports

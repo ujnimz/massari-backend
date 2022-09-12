@@ -89,7 +89,6 @@ exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
 });
 
 // Update Product -- Admin
-
 exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   let product = await Product.findById(req.params.id);
 
@@ -106,7 +105,7 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
     images = req.body.images;
   }
 
-  if (images !== undefined) {
+  if (images.length > 0) {
     // Deleting Images From Cloudinary
     for (let i = 0; i < product.images.length; i++) {
       await cloudinary.v2.uploader.destroy(product.images[i].public_id);
