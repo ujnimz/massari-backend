@@ -19,6 +19,10 @@ const productSchema = new Schema({
     required: [true, 'Please enter Product Price'],
     maxLength: [8, 'Product Price cannot exceed 8 characters'],
   },
+  salePrice: {
+    type: Number,
+    maxLength: [8, 'Product Sale Price cannot exceed 8 characters'],
+  },
   ratings: {
     type: Number,
     default: 0,
@@ -82,6 +86,34 @@ const productSchema = new Schema({
     type: String,
     default: 'Published',
     trim: true,
+  },
+  sku: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  soldIndividually: {
+    type: Boolean,
+    default: false,
+  },
+  weight: {
+    type: Number,
+  },
+  length: {
+    type: Number,
+  },
+  width: {
+    type: Number,
+  },
+  height: {
+    type: Number,
+  },
+  seoTitle: {
+    type: String,
+    trim: true,
+  },
+  seoDescription: {
+    type: String,
   },
   user: {
     type: mongoose.Schema.ObjectId,
