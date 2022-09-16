@@ -12,7 +12,6 @@ const productSchema = new Schema({
   },
   description: {
     type: String,
-    required: [true, 'Please enter Product Description'],
   },
   price: {
     type: Number,
@@ -89,7 +88,6 @@ const productSchema = new Schema({
   },
   sku: {
     type: String,
-    required: true,
     trim: true,
   },
   soldIndividually: {
