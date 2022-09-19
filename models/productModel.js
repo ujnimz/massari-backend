@@ -38,18 +38,9 @@ const productSchema = new Schema({
       },
     },
   ],
-  categories: [
-    {
-      category_id: {
-        type: String,
-        required: true,
-      },
-      category_name: {
-        type: String,
-        required: true,
-      },
-    },
-  ],
+  categories: {
+    type: [String],
+  },
   stock: {
     type: Number,
     required: [true, 'Please enter Product Stock'],

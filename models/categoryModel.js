@@ -13,7 +13,16 @@ const categorySchema = new Schema({
   },
   description: {
     type: String,
-    required: [true, 'Please enter Category Description'],
+  },
+  products: {
+    type: [String],
+  },
+  seoTitle: {
+    type: String,
+    trim: true,
+  },
+  seoDescription: {
+    type: String,
   },
   user: {
     type: mongoose.Schema.ObjectId,

@@ -7,7 +7,7 @@ const ApiFeatures = require('../utils/apifeatures');
 exports.getAllCategories = catchAsyncErrors(async (req, res, next) => {
   const resultPerPage = 8;
   const categoriesCount = await Category.countDocuments();
-
+  console.log(req.query);
   const apiFeature = new ApiFeatures(Category.find(), req.query)
     .search()
     .filter();

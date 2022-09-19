@@ -1,4 +1,5 @@
 const Product = require('../models/productModel');
+const Category = require('../models/categoryModel');
 const ErrorHander = require('../utils/errorhander');
 const catchAsyncErrors = require('../middleware/catchAsyncErrors');
 const ApiFeatures = require('../utils/apifeatures');
@@ -30,6 +31,17 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
   req.body.user = req.user.id;
 
   const product = await Product.create(req.body);
+
+  if (product) {
+    // Add products array in each category
+    await Category.updateMany(
+      {
+        _id: {'$in': req.body.categories},
+        'products': {$ne: product._id},
+      },
+      {$push: {products: product._id}},
+    );
+  }
 
   res.status(201).json({
     success: true,
@@ -90,6 +102,7 @@ exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
 // Update Product -- Admin
 exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   let product = await Product.findById(req.params.id);
+  let oldProduct = product;
 
   if (!product) {
     return next(new ErrorHander('Product not found', 404));
@@ -128,11 +141,36 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
     delete req.body.images;
   }
 
+  // Update the product
   product = await Product.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
     useFindAndModify: false,
   });
+
+  // Remove product in each old category
+  if (oldProduct.categories.length > 0) {
+    const test = await Category.updateMany(
+      {
+        '_id': {$in: oldProduct.categories},
+      },
+      {
+        $pull: {'products': req.params.id},
+      },
+    );
+  }
+
+  // Add product in each new category
+  if (req.body.categories.length > 0) {
+    await Category.updateMany(
+      {
+        '_id': {$in: req.body.categories},
+      },
+      {
+        $push: {'products': req.params.id},
+      },
+    );
+  }
 
   res.status(200).json({
     success: true,
